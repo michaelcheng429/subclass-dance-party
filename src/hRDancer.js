@@ -25,7 +25,7 @@ HRDancer.prototype.step = function(){
 
     var dist = Math.sqrt(Math.pow(($nodeNewX - dancerNewX), 2) + Math.pow(($nodeNewY - dancerNewY),2));
     if (dist !== 0 && dist <= 100){
-      // 
+      $('.collision-sound').attr('src', 'boing.mp3');
     }
 
     // dist = sqrt( (x1 - x2)^2 + (y1 - y2)^2  )
