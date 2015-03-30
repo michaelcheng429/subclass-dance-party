@@ -1,7 +1,6 @@
 var HungryDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<div class="hungry-dancer"></div>');
-  this.setPosition(top, left);
+  this.$node.addClass('hungry');
 };
 
 HungryDancer.prototype = Object.create(Dancer.prototype);

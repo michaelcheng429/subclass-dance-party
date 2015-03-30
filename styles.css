@@ -26,10 +26,21 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.hungry-dancer{
-  border:10px solid green;
+.hungry{
+  border:10px solid teal;
   border-radius:30px;
   position:absolute;
   width: 100px;
   height: 50px;
 }
+
+.hr{
+  background: url('hackreactorlogo.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 0;
+  position:absolute;
+  width:  100px;
+  height: 100px;
+}
+
