@@ -25,3 +25,11 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.hungry-dancer{
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+  width: 100px;
+  height: 100px;
+}
