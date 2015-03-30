@@ -35,6 +35,7 @@ body, a:link, a:visited, a:active{
 }
 
 .hr{
+  -webkit-transition: top 2s, left 2s;
   background: url('hackreactorlogo.png');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -44,3 +45,7 @@ body, a:link, a:visited, a:active{
   height: 100px;
 }
 
+audio {
+  display: block;
+  margin: 0 auto;
+}
