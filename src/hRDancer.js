@@ -11,7 +11,6 @@ HRDancer.prototype.step = function(){
   var randY = $("body").height() / 5 * (2 * Math.random() - 1);
   var randX = $("body").width() / 5 * (2 * Math.random() - 1);
 
-
   setTimeout(function(){
     Dancer.prototype.setPosition.call(this, this.$node.position().top + randY,
     this.$node.position().left +  randX);
@@ -24,10 +23,18 @@ HRDancer.prototype.step = function(){
     var dancerNewY = dancer.$node.position().top + 50;
 
     var dist = Math.sqrt(Math.pow(($nodeNewX - dancerNewX), 2) + Math.pow(($nodeNewY - dancerNewY),2));
-    if (dist !== 0 && dist <= 100){
+    
+    var dancerCollision = dist !== 0 && dist <= 100;
+    var wallCollision = (dancerNewX - 50 <= 0) || (dancerNewX + 50 >= $("body").width()) ||
+        (dancerNewY - 50 <= 0) || (dancerNewY + 50 >= $("body").height());
+    
+    if (dancerCollision){ // logo <-> logo collisions
       $('.collision-sound').attr('src', 'boing.mp3');
-      randY = -2 * randY;
-      randX = -2 * randX;
+      randY = -4 * randY;
+      randX = -4 * randX;
+    }
+    if (wallCollision){
+      dancer.setPosition(Math.random() * $("body").height(), Math.random() * $("body").width());
     }
   });
 };
