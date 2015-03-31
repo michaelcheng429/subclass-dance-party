@@ -28,26 +28,6 @@ HRDancer.prototype.step = function(){
       $('.collision-sound').attr('src', 'boing.mp3');
       randY = -2 * randY;
       randX = -2 * randX;
-
     }
   });
 };
-
-// bill
-
-  // var randY = $("body").height() / 10 * Math.random();
-  // var randX = $("body").width() / 10 * Math.random(); 
-
-
-  // setTimeout(function(){
-  //   Dancer.prototype.setPosition.call(this, this.$node.position().top + randY,
-  //   this.$node.position().left +  randX);
-  // }.bind(this), 1000);
-
-  // michael
-
-  // setTimeout(function(){
-  //   console.log(this.$node.position().top);
-  //   debugger;
-  //   Dancer.prototype.setPosition.call(this, randY, randX);
-  // }.bind(this), 1000);
