@@ -33,7 +33,7 @@ HRDancer.prototype.step = function(){
       randY = -4 * randY;
       randX = -4 * randX;
     }
-    if (wallCollision){
+    if (wallCollision){ // TODO: 
       dancer.setPosition(Math.random() * $("body").height(), Math.random() * $("body").width());
     }
   });
