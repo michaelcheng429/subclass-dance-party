@@ -43,5 +43,13 @@ $(document).ready(function(){
     });
   });
 
+  // Click handler that callsl theh breakLine method, which resets dancer positions
+  $('.breakLineButton').on('click', function() {
+    window.dancers.forEach(function(dancer) {
+      // Calls the breakLine method for each dancer
+      dancer.breakLine();
+    });
+  });
+
 });
 

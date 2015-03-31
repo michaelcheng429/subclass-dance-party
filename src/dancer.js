@@ -38,6 +38,12 @@ Dancer.prototype.lineUp = function(){
   this.$node.css(styleSettings);
 };
 
+// Moves all dancers to a new random position
+Dancer.prototype.breakLine = function() {
+  // Call setPosition with random X and Y coordinates
+  this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
+};
+
 
 
 //======== Old functional code ===========
