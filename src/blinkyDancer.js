@@ -1,11 +1,18 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps){
+  // Makes BlinkyDancer an instance of the Dancer superclass with same properties
   Dancer.call(this, top, left, timeBetweenSteps);
 };
 
+// Import the methods of the Dancer superclass
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
+
+// Reset the constructor to of BlinkyDancer to BlinkyDancer
 BlinkyDancer.prototype.constructor = BlinkyDancer;
+
+// Call the Dancer step method, which repeatedly calls the step method
 BlinkyDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
+  // Makes BlinkyDancer "blink" on and off
   this.$node.toggle();
 };
 
