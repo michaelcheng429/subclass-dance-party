@@ -38,22 +38,41 @@ HRDancer.prototype.step = function(){
 
   // Iterates through each dancer in the global "dancers" array
   window.dancers.forEach(function(dancer) {
-    var dancerNewX = dancer.$node.position().left + 50;
-    var dancerNewY = dancer.$node.position().top + 50;
 
-    var dist = Math.sqrt(Math.pow(($nodeNewX - dancerNewX), 2) + Math.pow(($nodeNewY - dancerNewY),2));
-    
-    var dancerCollision = dist !== 0 && dist <= 100;
-    var wallCollision = (dancerNewX - 50 <= 0) || (dancerNewX + 50 >= $("body").width()) ||
-        (dancerNewY - 50 <= 0) || (dancerNewY + 50 >= $("body").height());
-    
-    if (dancerCollision){
-        $('.collision-sound').attr('src', 'boing.mp3');
-        randY = -4 * randY;
-        randX = -4 * randX;
-    }
-    if (wallCollision){ // TODO: 
-      dancer.setPosition(Math.random() * $("body").height(), Math.random() * $("body").width());
+    // Only perform actions for instances of HRDancer
+    if (dancer instanceof HRDancer){
+      
+      // X and Y coordinates for center of each HRDancer
+      var dancerNewX = dancer.$node.position().left + 50;
+      var dancerNewY = dancer.$node.position().top + 50;
+
+      // Calculates distance between HRDancers
+      var dist = Math.sqrt(Math.pow(($nodeNewX - dancerNewX), 2) + Math.pow(($nodeNewY - dancerNewY),2));
+      
+      // Logic for when HRDancers collide with one another
+      var dancerCollision = dist !== 0 && dist <= 100;
+
+      // Logic for when HRDancers collide with the wall
+      var wallCollision = 
+        dancerNewX - 50 <= 0 || 
+        dancerNewX + 50 >= $("body").width() || 
+        dancerNewY - 50 <= 0 || 
+        dancerNewY + 50 >= $("body").height();
+      
+      // When HRDancers collide with one another, trigger sound and bounce back
+      if (dancerCollision){
+          $('.collision-sound').attr('src', 'boing.mp3');
+          randY = -4 * randY;
+          randX = -4 * randX;
+      }
+
+      // When HRDancers collide with the wall, transition to new X and Y coordinates
+      if (wallCollision){ 
+        dancer.setPosition(
+          Math.random() * $("body").height(), 
+          Math.random() * $("body").width()
+        );
+      }
     }
   });
 };
