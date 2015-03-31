@@ -28,10 +28,10 @@ HRDancer.prototype.step = function(){
     var wallCollision = (dancerNewX - 50 <= 0) || (dancerNewX + 50 >= $("body").width()) ||
         (dancerNewY - 50 <= 0) || (dancerNewY + 50 >= $("body").height());
     
-    if (dancerCollision){ // logo <-> logo collisions
-      $('.collision-sound').attr('src', 'boing.mp3');
-      randY = -4 * randY;
-      randX = -4 * randX;
+    if (dancerCollision){
+        $('.collision-sound').attr('src', 'boing.mp3');
+        randY = -4 * randY;
+        randX = -4 * randX;
     }
     if (wallCollision){ // TODO: 
       dancer.setPosition(Math.random() * $("body").height(), Math.random() * $("body").width());
