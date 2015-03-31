@@ -26,17 +26,10 @@ HRDancer.prototype.step = function(){
     var dist = Math.sqrt(Math.pow(($nodeNewX - dancerNewX), 2) + Math.pow(($nodeNewY - dancerNewY),2));
     if (dist !== 0 && dist <= 100){
       $('.collision-sound').attr('src', 'boing.mp3');
-      // make things bounce off each other
-      
+      randY = -2 * randY;
+      randX = -2 * randX;
+
     }
-
-    // dist = sqrt( (x1 - x2)^2 + (y1 - y2)^2  )
-    // x1 and y1 will be from this.$node.position() shifted by 50 in each dir
-    // x2 and y2 will be from dancers array shifted by 50 in each dir
-    // if dist === 0, then no collision detection
-    // if dist <= 100, then collision (console log at first)
-
-
   });
 };
 
