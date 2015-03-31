@@ -14,6 +14,17 @@ BlinkyDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
   // Makes BlinkyDancer "blink" on and off
   this.$node.toggle();
+
+  // Generates random number between 0 and 255
+  var randColor = function(){
+    return Math.floor(Math.random() * 256);
+  };
+
+  // New CSS background color
+  var styleSettings = {border: "10px solid rgb(" + randColor() + ',' + randColor() + ',' + randColor() + ')'};
+
+  // Sets new CSS background color for this.$node
+  this.$node.css(styleSettings);
 };
 
 
