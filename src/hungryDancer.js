@@ -1,6 +1,8 @@
 var HungryDancer = function(top, left, timeBetweenSteps){
   // Makes HungryDancer an instance of the Dancer superclass with same properties
   Dancer.call(this, top, left, timeBetweenSteps);
+
+  // Adds "hungry" class to HungryDancer, which allows additional styling
   this.$node.addClass('hungry');
 };
 
