@@ -62,8 +62,8 @@ HRDancer.prototype.step = function(){
       // When HRDancers collide with one another, trigger sound and bounce back
       if (dancerCollision){
           $('.collision-sound').attr('src', 'boing.mp3');
-          randY = -4 * randY;
-          randX = -4 * randX;
+          randY = -3 * randY;
+          randX = -3 * randX;
       }
 
       // When HRDancers collide with the wall, transition to new X and Y coordinates
