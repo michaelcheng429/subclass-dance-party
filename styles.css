@@ -1,4 +1,6 @@
 body, html{
+  background: url('skybg.jpg');
+  background-size: cover;
   height:100%;
 }
 body{
