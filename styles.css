@@ -57,6 +57,7 @@ body, a:link, a:visited, a:active{
 }
 
 .duck{
+  -webkit-transition: top 1s, left 1s, height .5s, width .5s;
   background: url('duck.gif');
   background-size: 100%;
   background-repeat: no-repeat;
