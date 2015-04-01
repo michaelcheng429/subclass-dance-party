@@ -21,7 +21,11 @@ BlinkyDancer.prototype.step = function(){
   };
 
   // New CSS background color
-  var styleSettings = {border: "10px solid rgb(" + randColor() + ',' + randColor() + ',' + randColor() + ')'};
+  var styleSettings = {
+    border: "10px solid rgb(" + 
+      randColor() + ',' + 
+      randColor() + ',' + 
+      randColor() + ')'};
 
   // Sets new CSS background color for this.$node
   this.$node.css(styleSettings);
