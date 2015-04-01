@@ -75,21 +75,4 @@ HRDancer.prototype.step = function(){
       }
     }
   });
-
-  // Reset the HR logo size
-  var styleSettings = {
-    height: 100,
-    width: 100
-  };
-  this.$node.css(styleSettings);
-
-  // On mouseover, grow the HR logo size
-  var self = this;
-  $('.hr').on('mouseover', function() {
-    var styleSettings = {
-      height: 200,
-      width: 200
-    };
-    self.$node.css(styleSettings);
-  });
 };

@@ -25,7 +25,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  -webkit-transition: top 1.2s, left 1.2s, height .8s, width .8s;
+  -webkit-transition: top 1s, left 1s;
   border:10px solid red;
   border-radius:10px;
   position:absolute;
@@ -53,6 +53,16 @@ body, a:link, a:visited, a:active{
 @-webkit-keyframes spin {
   0% {-webkit-transform: rotate(0deg);}
   100% {-webkit-transform: rotate(360deg);}
+}
+
+.duck{
+  background: url('duck.gif');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 0;
+  position:absolute;
+  width:  100px;
+  height: 100px;
 }
 
 audio {
